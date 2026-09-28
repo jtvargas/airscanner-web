@@ -1,0 +1,119 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+
+const base = import.meta.env.BASE_URL;
+---
+
+<SiteLayout
+  title="Terms of use — AirScanner"
+  description="Plain-English terms for using AirScanner and this website, including scanner requirements, checking output, and your consumer rights."
+  legal
+>
+  <header class="page-heading">
+    <p class="eyebrow">AirScanner / Terms</p>
+    <h1>Terms of use</h1>
+    <p class="legal-date">Effective <time datetime="2026-09-28">28 September 2026</time></p>
+  </header>
+
+  <div class="prose">
+    <p>
+      These terms cover your use of the AirScanner app and this informational
+      website. AirScanner connects an iPhone or iPad to a compatible flatbed
+      scanner, saves PDFs, and recognizes text on-device for in-app search.
+      Our <a href={`${base}privacy/`}>privacy policy</a> explains data handling.
+    </p>
+
+    <h2>Use it with permission</h2>
+    <p>
+      Scan only documents you own or are authorized to scan, and connect only to
+      scanners and networks you are allowed to use. Respect applicable law and
+      other people’s privacy and intellectual property rights. You retain your
+      rights in your documents; these terms do not transfer them to the developer.
+    </p>
+
+    <h2>What you need</h2>
+    <p>
+      AirScanner requires iOS or iPadOS 17 or later and a real
+      eSCL/AirScan-compatible flatbed scanner on the same local Wi-Fi network.
+      It is not a camera scanner, and AirPrint support alone does not establish
+      compatibility. Local Network permission is required. Isolated guest networks
+      can prevent connections; keep the app open while scanning.
+    </p>
+    <p>
+      Available scan settings and results depend on your scanner, its firmware,
+      your network, and your operating system. Compatibility with every scanner,
+      network setup, or future system version is not guaranteed. Use trusted
+      networks: scanner transport may be unencrypted, as explained in the privacy
+      policy.
+    </p>
+
+    <h2>Check your output and keep backups</h2>
+    <ul>
+      <li>
+        Review saved PDFs for completeness, legibility, and correct page content
+        before relying on them or discarding originals. Scans capture the full
+        platen; automatic cropping is not provided.
+      </li>
+      <li>
+        Check recognized text before using or sharing it. OCR can miss or misread
+        text, and exported PDFs do not receive a searchable OCR text layer.
+      </li>
+      <li>
+        Treat empty-glass checks as an estimate, not proof that the glass is empty
+        or a document has been detected correctly.
+      </li>
+      <li>
+        Keep backups of important documents. Local app storage is not an archive
+        or a backup service; deletion, device loss, or system changes can affect
+        access to your files.
+      </li>
+    </ul>
+
+    <h2>Other services you choose</h2>
+    <p>
+      Exports, sharing, Photos, clipboard features, and backups depend on the apps
+      and system services you use. Optional ratings are handled by Apple. This
+      website is hosted by GitHub Pages, and public support issues are handled by
+      GitHub. Those providers’ terms and privacy policies apply to their services;
+      AirScanner does not control their availability or handling of copies you
+      send to them.
+    </p>
+
+    <h2>Availability and responsibility</h2>
+    <p>
+      To the extent permitted by law, the app and website are provided “as is” and
+      “as available,” without additional warranties. The developer does not
+      guarantee uninterrupted or error-free operation, scanner compatibility,
+      accurate OCR, successful scans, or suitability for a particular purpose.
+    </p>
+    <p>
+      To the extent permitted by law, the developer is not liable for losses that
+      were not reasonably foreseeable from use of the app or website. This does
+      not exclude or limit liability where doing so would be unlawful, including
+      liability for fraud or for death or personal injury caused by negligence
+      where protected by applicable law.
+    </p>
+    <p>
+      <strong>Your mandatory consumer rights remain intact.</strong> Nothing here
+      excludes statutory guarantees, remedies, or other rights that cannot legally
+      be excluded or limited. Those protections take priority over these terms.
+    </p>
+
+    <h2>Changes to these terms</h2>
+    <p>
+      Revised terms will be published here with a new effective date and apply
+      prospectively, not to earlier use. Changes cannot remove rights you already
+      have under applicable law.
+    </p>
+
+    <h2>General questions</h2>
+    <p>
+      Use the <a href="https://github.com/jtvargas/airscanner-web/issues">public website-repository issues</a>
+      for general questions about the app, website, or these terms. This is a public
+      channel, not a confidential support service, and no response time is promised.
+      <strong>Do not include documents, personal information, or network identifiers</strong>
+      such as IP addresses, Wi-Fi names, or scanner serial numbers.
+    </p>
+    <p><a href={`${base}privacy/`}>Read the privacy policy</a> or <a href={base}>return to AirScanner</a>.</p>
+  </div>
+</SiteLayout>

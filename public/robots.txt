@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /airscanner-web/
+
+Sitemap: https://jtvargas.github.io/airscanner-web/sitemap-index.xml

@@ -1,0 +1,112 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+
+const base = import.meta.env.BASE_URL;
+---
+
+<SiteLayout
+  title="Privacy — AirScanner"
+  description="How AirScanner handles local scans, scanner connections, optional sharing, and visits to this website."
+  legal
+>
+  <header class="page-heading">
+    <p class="eyebrow">AirScanner / Privacy</p>
+    <h1>Privacy policy</h1>
+    <p class="legal-date">Effective <time datetime="2026-09-28">28 September 2026</time></p>
+  </header>
+
+  <div class="prose">
+    <p>
+      AirScanner processes scans on your iPhone or iPad. The developer does not
+      collect your scanned documents, recognized text, usage analytics, advertising
+      identifiers, or app account data. There is no app account, developer backend,
+      advertising, analytics SDK, or app-managed cloud sync.
+    </p>
+
+    <h2>What your device stores</h2>
+    <p>
+      The app keeps saved PDFs, document metadata, recognized text used for search
+      (OCR), and small settings on your device. OCR runs on-device. Deleting a
+      document in the app removes its PDF and OCR index from the app; it does not
+      remove copies you previously exported or copies in existing backups.
+    </p>
+    <p>
+      Normal iOS or iPadOS backups can include app data, depending on your system
+      settings. Local storage is not a promise that data can never leave your
+      device: backups and destinations you choose may store copies elsewhere.
+    </p>
+
+    <h2>Connecting to a scanner</h2>
+    <p>
+      Local Network permission lets AirScanner discover and communicate with
+      compatible scanners on your local network. Scan commands and images travel
+      between your device and the scanner, not through a developer server.
+    </p>
+    <p>
+      Use a network and scanner you trust. A scanner connection may use unencrypted
+      HTTP. For HTTPS connections, trust is scoped to the discovered scanner rather
+      than normal public-web certificate validation. AirScanner does not promise
+      end-to-end encryption or that a local network is secure.
+    </p>
+
+    <h2>Actions you choose</h2>
+    <ul>
+      <li>
+        <strong>Sharing and export.</strong> A selected app, service, or file
+        destination receives the content you send. Its own privacy rules and sync
+        settings apply.
+      </li>
+      <li>
+        <strong>Photos.</strong> Exporting a PDF’s first page to Photos requests
+        add-only permission when you choose that action. Photos may sync the image
+        according to your Apple settings. AirScanner does not request full
+        photo-library read access, camera access, or microphone access.
+      </li>
+      <li>
+        <strong>Clipboard.</strong> Text you copy leaves the app’s storage boundary
+        and becomes available through the system clipboard, including any
+        system-managed clipboard sharing you enable.
+      </li>
+      <li>
+        <strong>Ratings.</strong> Optional in-app rating prompts use Apple’s StoreKit
+        system. Apple controls that process; the developer receives no in-app
+        record of your review response.
+      </li>
+    </ul>
+
+    <h2>This website and its host</h2>
+    <p>
+      This is a static website. It adds no analytics, tracking, cookies, contact
+      forms, third-party scripts, external fonts, or embedded third-party resources.
+      External links load their destination only when you follow them.
+    </p>
+    <p>
+      GitHub Pages hosts this site. GitHub logs and stores visitors’ IP addresses
+      for security, including visits made without signing in. See GitHub’s
+      <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages#data-collection">Pages data-collection disclosure</a>
+      and <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub General Privacy Statement</a>
+      for how GitHub handles that information.
+    </p>
+
+    <h2>Questions and public support</h2>
+    <p>
+      For general questions, use the
+      <a href="https://github.com/jtvargas/airscanner-web/issues">public website-repository issues</a>.
+      Posting is voluntary. Issues are public: maintainers and others can see your
+      post and public GitHub account information. GitHub operates this service
+      under its own privacy statement linked above.
+    </p>
+    <p>
+      <strong>Do not post scanned documents, personal information, or network
+      identifiers</strong> such as IP addresses, Wi-Fi names, or scanner serial
+      numbers. Describe the problem without those details.
+    </p>
+
+    <h2>Policy updates</h2>
+    <p>
+      Changes to these practices will be reflected here with an updated effective
+      date. This page describes the app and website practices as of the date above.
+    </p>
+    <p><a href={`${base}terms/`}>Read the terms of use</a> or <a href={base}>return to AirScanner</a>.</p>
+  </div>
+</SiteLayout>

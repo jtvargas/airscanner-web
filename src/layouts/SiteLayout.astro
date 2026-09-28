@@ -1,0 +1,71 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  legal?: boolean;
+  noindex?: boolean;
+}
+
+const { title, description, legal = false, noindex = false } = Astro.props;
+const base = import.meta.env.BASE_URL;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const icon = new URL(`${base}images/app-icon.png`, Astro.site);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#096b70" />
+    <meta name="referrer" content="no-referrer" />
+    {noindex && <meta name="robots" content="noindex, follow" />}
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/png" sizes="64x64" href={`${base}images/favicon.png`} />
+    <link rel="apple-touch-icon" sizes="180x180" href={`${base}images/apple-touch-icon.png`} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="AirScanner" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={icon} />
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:height" content="512" />
+    <meta property="og:image:alt" content="AirScanner app icon" />
+    <meta name="twitter:card" content="summary" />
+    <slot name="head" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header wrap">
+      <a class="brand" href={base} aria-label="AirScanner home">
+        <img src={`${base}images/app-icon.png`} width="36" height="36" alt="" />
+        <span>AirScanner</span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href={`${base}#how-it-works`}>How it works</a>
+        <a href={`${base}#compatibility`}>Compatibility</a>
+      </nav>
+    </header>
+    <main id="main" class={legal ? 'legal' : undefined} tabindex="-1">
+      <slot />
+    </main>
+    <footer class="site-footer wrap">
+      <div class="footer-note">
+        <a class="footer-name" href={base}>AirScanner</a>
+        <p>Wi-Fi scanning for iPhone and iPad.</p>
+      </div>
+      <nav aria-label="Footer navigation">
+        <a href={`${base}privacy/`}>Privacy</a>
+        <a href={`${base}terms/`}>Terms</a>
+        <a href="https://github.com/jtvargas/airscanner-web/issues">Support</a>
+        <a href="https://github.com/jtvargas/airscanner-web">Website source</a>
+      </nav>
+    </footer>
+  </body>
+</html>
