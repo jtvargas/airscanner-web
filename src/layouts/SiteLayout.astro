@@ -25,6 +25,7 @@ const icon = new URL(`${base}images/app-icon.png`, Astro.site);
     <meta name="referrer" content="no-referrer" />
     {noindex && <meta name="robots" content="noindex, follow" />}
     <link rel="canonical" href={canonical} />
+    <link rel="sitemap" type="application/xml" href={`${base}sitemap-index.xml`} />
     <link rel="icon" type="image/png" sizes="64x64" href={`${base}images/favicon.png`} />
     <link rel="apple-touch-icon" sizes="180x180" href={`${base}images/apple-touch-icon.png`} />
     <meta property="og:type" content="website" />
