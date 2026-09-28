@@ -8,112 +8,126 @@ const application = {
   name: 'AirScanner',
   applicationCategory: 'UtilitiesApplication',
   operatingSystem: 'iOS 17 or later; iPadOS 17 or later',
-  description: 'Scan from a compatible eSCL/AirScan flatbed scanner over local Wi-Fi to PDFs on iPhone and iPad, with on-device text recognition.',
+  description: 'Scan documents to PDF from a compatible Wi-Fi scanner. Save files on your iPhone or iPad, search and copy text, and share scans.',
   url: new URL(base, Astro.site).href,
   image: new URL(`${base}images/app-icon.png`, Astro.site).href,
 };
 ---
 
 <SiteLayout
-  title="AirScanner — Wi-Fi scanner to PDF on iPhone & iPad"
-  description="Turn scans from your eSCL/AirScan-compatible Wi-Fi flatbed scanner into PDFs on iPhone and iPad. Local saving, on-device OCR, and straightforward sharing."
+  title="AirScanner — Wi-Fi scanning for iPhone and iPad"
+  description="Scan documents to PDF from a compatible Wi-Fi scanner. Save files on your iPhone or iPad, search and copy text, and share scans."
 >
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(application)} />
 
   <section class="hero wrap" aria-labelledby="hero-title">
     <div class="hero-copy">
-      <p class="eyebrow">Your scanner, without the computer</p>
-      <h1 id="hero-title">From Wi-Fi scanner<br class="desktop-break" /> to PDF.<br /><span>On iPhone and iPad.</span></h1>
-      <p class="hero-description">Put your document on the glass. AirScanner connects to your compatible flatbed scanner, saves the PDF on your device, and lets you share it when you’re ready.</p>
-      <a class="text-link" href="#how-it-works">See how it works <span aria-hidden="true">↗</span></a>
-      <p class="hero-requirement">iOS / iPadOS 17+ · eSCL / AirScan scanner required</p>
-      <p class="privacy-note">No account. No ads. No in-app tracking.</p>
+      <h1 id="hero-title">Scan to your iPhone or iPad.</h1>
+      <p class="hero-description">Use your Wi-Fi scanner to save documents as PDFs. Search and copy text in the app, or share a file.</p>
+      <p class="scanner-note">You need a flatbed scanner. AirScanner does not use your camera.</p>
+      <a class="primary-link" href="#how-it-works">How to scan</a>
+      <p class="hero-requirement">For iOS 17 or later. No account needed.</p>
     </div>
     <figure class="hero-visual">
-      <div class="screenshot-mat">
+      <div class="settings-crop">
         <img
-          class="app-screenshot"
-          src={`${base}images/scanners.webp`}
+          src={`${base}images/scan-settings.webp`}
           width="660"
           height="1320"
-          alt="AirScanner’s Scanners screen, with local scanner discovery and glass-check controls."
+          alt="AirScanner showing a ready scanner, 300 dpi resolution, grayscale, and PDF output."
           loading="eager"
           fetchpriority="high"
         />
       </div>
-      <figcaption>Your scanner, found on your local network.</figcaption>
+      <figcaption>Scan settings. <a href={`${base}images/scan-settings.webp`} aria-label="View the full scan settings screenshot">Full screenshot</a></figcaption>
     </figure>
   </section>
 
-  <section class="workflow wrap ruled-section" id="how-it-works" aria-labelledby="workflow-title">
-    <div class="section-heading">
-      <p class="eyebrow">From glass to file</p>
-      <h2 id="workflow-title">Three steps. No camera.</h2>
-      <p>This is for the scanner you already have—not a photo of your document.</p>
+  <section class="guide wrap" id="how-it-works" aria-labelledby="guide-title">
+    <div class="guide-intro">
+      <h2 id="guide-title">How to scan</h2>
+      <p>Put your phone and scanner on the same Wi-Fi network.</p>
+      <figure class="scanner-figure">
+        <div class="scanner-crop">
+          <img
+            src={`${base}images/scanners.webp`}
+            width="660"
+            height="1320"
+            alt="AirScanner's scanner list showing a printer found on the local network."
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+        <figcaption>Scanner list. <a href={`${base}images/scanners.webp`} aria-label="View the full scanner list screenshot">Full screenshot</a></figcaption>
+      </figure>
     </div>
     <ol class="steps">
       <li>
-        <span class="step-number" aria-hidden="true">01</span>
-        <div><h3>Find your scanner.</h3><p>Join the same Wi-Fi network and allow Local Network access. AirScanner discovers compatible eSCL/AirScan scanners.</p></div>
+        <h3>Choose your scanner</h3>
+        <p>Open AirScanner, allow Local Network access, and choose your scanner and settings.</p>
       </li>
       <li>
-        <span class="step-number" aria-hidden="true">02</span>
-        <div><h3>Check the glass.</h3><p>Place your page on the flatbed. A quick preview can check for a document before you scan. It’s a helpful check, not a guarantee.</p></div>
+        <h3>Check your page</h3>
+        <p>Put the page on the glass, close the lid, and tap <strong>Check glass</strong>. Check the preview before scanning.</p>
       </li>
       <li>
-        <span class="step-number" aria-hidden="true">03</span>
-        <div><h3>Scan. Save. Share.</h3><p>Choose the settings your scanner supports and keep the app open. Save your PDF locally, preview it, or send it to another app.</p></div>
+        <h3>Save the scan</h3>
+        <p>Tap <strong>Scan document</strong>. Keep the app open until your PDF is saved.</p>
       </li>
     </ol>
   </section>
 
-  <section class="scan-section wrap ruled-section" aria-labelledby="scan-title">
-    <figure class="settings-visual">
-      <div class="settings-mat">
-        <img
-          class="app-screenshot"
-          src={`${base}images/scan-settings.webp`}
-          width="660"
-          height="1320"
-          alt="AirScanner scan settings, showing the resolution and color options available from a scanner."
-          loading="lazy"
-          decoding="async"
-        />
-      </div>
-      <figcaption>Resolution, color, and PDF output.</figcaption>
-    </figure>
-    <div class="scan-copy">
-      <p class="eyebrow">PDF &amp; on-device OCR</p>
-      <h2 id="scan-title">Save PDFs.<br />Find and copy text.</h2>
-      <p>Search your documents in the app with on-device text recognition. Use Live Text to select and copy what you need.</p>
-      <p>Share a PDF with another app, save it to Files, or export its first page to Photos. Sharing destinations and device backups follow your own system settings.</p>
-      <p class="plain-note">A useful distinction: OCR helps you find and copy text in AirScanner. It does not add a searchable text layer to exported PDFs. Always check recognized text.</p>
-      <a class="text-link" href={`${base}privacy/`}>Read the privacy details <span aria-hidden="true">↗</span></a>
+  <section class="documents wrap" aria-labelledby="documents-title">
+    <div>
+      <h2 id="documents-title">Your saved documents</h2>
+      <ul class="document-tools">
+        <li>Open, rename, and search your PDFs.</li>
+        <li>Select and copy text from a page.</li>
+        <li>Share a PDF, save it to Files, or save its first page to Photos.</li>
+      </ul>
+      <p class="note">Text search works in the app. AirScanner does not add searchable text to exported PDFs.</p>
+    </div>
+    <div class="privacy-copy">
+      <h2>No ads or tracking</h2>
+      <p>The app saves PDFs and recognized text on your device. It does not send them to the developer.</p>
+      <p>Device backups and apps you share with may keep their own copies.</p>
+      <a class="text-link" href={`${base}privacy/`}>Privacy policy</a>
     </div>
   </section>
 
-  <section class="compatibility wrap ruled-section" id="compatibility" aria-labelledby="compatibility-title">
-    <div class="section-heading">
-      <p class="eyebrow">Before you scan</p>
-      <h2 id="compatibility-title">The right scanner.<br />The same Wi-Fi.</h2>
-      <p>You’ll need an iPhone or iPad running iOS or iPadOS 17+, and a flatbed scanner with eSCL / AirScan support. AirPrint alone is not enough.</p>
+  <section class="support wrap" id="compatibility" aria-labelledby="support-title">
+    <div class="support-heading">
+      <h2 id="support-title">Scanner support</h2>
+      <p>Works with eSCL / AirScan flatbed scanners on the same Wi-Fi network.</p>
     </div>
     <div class="disclosures">
       <details>
         <summary>Will my scanner work?</summary>
-        <div class="detail-content"><p>Check your scanner’s documentation for eSCL or AirScan flatbed scanning support. Available resolution and color options depend on the scanner. AirScanner scans the full glass; it does not automatically crop the page.</p></div>
+        <div class="detail-content">
+          <p>Look for eSCL or AirScan support in your scanner's manual. AirPrint alone is not enough: a printer may support printing over Wi-Fi but not scanning.</p>
+          <p>Scan settings depend on your scanner. AirScanner scans the whole glass and does not crop the page for you.</p>
+        </div>
       </details>
       <details>
-        <summary>What if my scanner doesn’t appear?</summary>
-        <div class="detail-content"><p>Make sure your scanner is awake, your iPhone or iPad is on the same local network, and Local Network permission is enabled for AirScanner in Settings. An isolated guest Wi-Fi network can prevent devices from finding each other.</p><p>Use a trusted network. Local scanner connections may be unencrypted.</p></div>
+        <summary>Why isn't my scanner listed?</summary>
+        <div class="detail-content">
+          <p>Turn the scanner on. Check that your phone and scanner use the same Wi-Fi, and allow Local Network access for AirScanner in Settings.</p>
+          <p>Guest Wi-Fi can block the connection. Use a network you trust: some scanners send scans without encryption.</p>
+        </div>
       </details>
       <details>
-        <summary>Where do my documents go?</summary>
-        <div class="detail-content"><p>PDFs, document information, and recognized text stay in the app’s storage on your device. There is no account, developer backend, or app-managed cloud sync. Normal iOS backups may include app data.</p><p>When you export or share, the destination app may upload or sync the file under its own settings and policies. <a href={`${base}privacy/`}>See the full privacy policy.</a></p></div>
+        <summary>What if the glass check doesn't work?</summary>
+        <div class="detail-content">
+          <p>Some scanners cannot make the small preview used for this check. AirScanner then offers <strong>Scan without check</strong>.</p>
+          <p>A faint page can look empty. Check its position and use <strong>Scan anyway</strong> if needed.</p>
+        </div>
       </details>
       <details>
-        <summary>Need help or found a problem?</summary>
-        <div class="detail-content"><p><a href="https://github.com/jtvargas/airscanner-web/issues">Open an issue in the public support repository.</a> Describe the general problem and your scanner model.</p><p>Issues are public. Never attach scans, personal details, IP addresses, serial numbers, or other network identifiers.</p></div>
+        <summary>How do I report a problem?</summary>
+        <div class="detail-content">
+          <p><a href="https://github.com/jtvargas/airscanner-web/issues">Report a problem on GitHub.</a> Include your scanner model and what went wrong.</p>
+          <p>Posts are public. Do not attach documents, personal details, IP addresses, or scanner serial numbers.</p>
+        </div>
       </details>
     </div>
   </section>
